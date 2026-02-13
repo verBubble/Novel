@@ -3,7 +3,7 @@ import os
 import re
 
 chapters_dir = os.path.expanduser("~/Novel/chapters")
-output_dir = os.path.expanduser("~/Novel/webpage")
+output_dir = os.path.expanduser("~/Novel/docs")
 
 chapter_files = sorted([f for f in os.listdir(chapters_dir) if f.endswith('.md')])
 
