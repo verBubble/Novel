@@ -1,0 +1,384 @@
+/* ===== Variables ===== */
+:root {
+    --color-bg: #faf9f7;
+    --color-bg-alt: #f5f3ef;
+    --color-text: #2c2c2c;
+    --color-text-light: #666;
+    --color-accent: #c9a86c;
+    --color-accent-dark: #a8894d;
+    --color-lamp: #f4e4c1;
+    --font-serif: 'Noto Serif SC', 'Crimson Pro', Georgia, serif;
+    --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --max-width: 800px;
+    --spacing: 2rem;
+}
+
+/* ===== Reset & Base ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-serif);
+    font-size: 18px;
+    line-height: 1.8;
+    color: var(--color-text);
+    background: var(--color-bg);
+}
+
+/* ===== Navigation ===== */
+.nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(250, 249, 247, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 100;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.nav-inner {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 1rem var(--spacing);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--color-text);
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: var(--color-text-light);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.2s;
+}
+
+.nav-links a:hover {
+    color: var(--color-accent-dark);
+}
+
+/* ===== Hero ===== */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: var(--spacing);
+    background: linear-gradient(180deg, var(--color-bg) 0%, var(--color-bg-alt) 100%);
+    position: relative;
+}
+
+.hero-content {
+    max-width: 600px;
+}
+
+.title {
+    font-size: 4rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.1em;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: var(--color-text-light);
+    margin-bottom: 1rem;
+}
+
+.tagline {
+    font-size: 1rem;
+    color: var(--color-text-light);
+    font-style: italic;
+    margin-bottom: 2rem;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    background: var(--color-accent);
+    color: white;
+    text-decoration: none;
+    font-size: 0.9rem;
+    letter-spacing: 0.05em;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.cta-button:hover {
+    background: var(--color-accent-dark);
+    transform: translateY(-2px);
+}
+
+/* Lamp decoration */
+.hero-decoration {
+    position: absolute;
+    bottom: 10%;
+    right: 10%;
+    opacity: 0.15;
+}
+
+.lamp {
+    width: 60px;
+    height: 80px;
+    background: var(--color-lamp);
+    border-radius: 50% 50% 5% 5%;
+    position: relative;
+    box-shadow: 0 0 60px 30px var(--color-lamp);
+}
+
+.lamp::after {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 40px;
+    background: var(--color-accent);
+    border-radius: 0 0 5px 5px;
+}
+
+/* ===== Intro Quote ===== */
+.intro {
+    padding: 6rem var(--spacing);
+    background: var(--color-bg-alt);
+}
+
+.intro blockquote {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    font-size: 1.4rem;
+    font-style: italic;
+    color: var(--color-text-light);
+    text-align: center;
+    position: relative;
+}
+
+.intro blockquote::before,
+.intro blockquote::after {
+    content: '"';
+    font-size: 4rem;
+    color: var(--color-accent);
+    opacity: 0.3;
+    position: absolute;
+}
+
+.intro blockquote::before {
+    top: -2rem;
+    left: -1rem;
+}
+
+.intro blockquote::after {
+    content: '"';
+    bottom: -3rem;
+    right: -1rem;
+}
+
+/* ===== Chapters Section ===== */
+.chapters {
+    padding: 6rem var(--spacing);
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.chapters h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    font-weight: 600;
+}
+
+.chapter-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.chapter-card {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    background: white;
+    border: 1px solid rgba(0,0,0,0.05);
+    text-decoration: none;
+    color: var(--color-text);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.chapter-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.chapter-number {
+    font-size: 0.8rem;
+    color: var(--color-accent);
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.5rem;
+}
+
+.chapter-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.chapter-desc {
+    font-size: 0.9rem;
+    color: var(--color-text-light);
+    line-height: 1.6;
+}
+
+/* ===== About Section ===== */
+.about {
+    padding: 6rem var(--spacing);
+    background: var(--color-bg-alt);
+}
+
+.about h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    font-weight: 600;
+}
+
+.about p {
+    max-width: var(--max-width);
+    margin: 0 auto 1.5rem;
+    text-align: center;
+    color: var(--color-text-light);
+}
+
+.about-quote {
+    font-style: italic;
+    color: var(--color-accent-dark) !important;
+    margin-top: 2rem !important;
+}
+
+/* ===== Footer ===== */
+.footer {
+    padding: 3rem var(--spacing);
+    text-align: center;
+    color: var(--color-text-light);
+    font-size: 0.9rem;
+}
+
+/* ===== Chapter Page Styles ===== */
+.chapter-page {
+    padding-top: 80px;
+}
+
+.chapter-header {
+    padding: 4rem var(--spacing);
+    text-align: center;
+    background: var(--color-bg-alt);
+}
+
+.chapter-header .chapter-number {
+    font-size: 1rem;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.chapter-header h1 {
+    font-size: 2.5rem;
+    font-weight: 600;
+}
+
+.chapter-content {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 4rem var(--spacing);
+}
+
+.chapter-content p {
+    margin-bottom: 1.5rem;
+    text-align: justify;
+}
+
+.chapter-content p:first-of-type::first-letter {
+    font-size: 3.5rem;
+    float: left;
+    line-height: 1;
+    margin-right: 0.5rem;
+    margin-top: 0.1rem;
+    color: var(--color-accent);
+}
+
+.chapter-nav {
+    display: flex;
+    justify-content: space-between;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 2rem var(--spacing) 4rem;
+    border-top: 1px solid rgba(0,0,0,0.1);
+}
+
+.chapter-nav a {
+    color: var(--color-text-light);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.2s;
+}
+
+.chapter-nav a:hover {
+    color: var(--color-accent-dark);
+}
+
+.chapter-nav .disabled {
+    opacity: 0.3;
+    pointer-events: none;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+    :root {
+        --spacing: 1.5rem;
+    }
+    
+    body {
+        font-size: 16px;
+    }
+    
+    .title {
+        font-size: 2.5rem;
+    }
+    
+    .chapter-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .hero-decoration {
+        display: none;
+    }
+    
+    .intro blockquote {
+        font-size: 1.2rem;
+    }
+    
+    .intro blockquote::before,
+    .intro blockquote::after {
+        display: none;
+    }
+}
