@@ -292,29 +292,32 @@ body {
 
 /* ===== Author Note Section ===== */
 .author-note {
-    padding: 5rem var(--spacing);
-    max-width: var(--max-width);
+    padding: 4rem var(--spacing);
+    max-width: 500px;
     margin: 0 auto;
 }
 
 .author-note h2 {
     text-align: center;
-    font-size: 1.8rem;
-    margin-bottom: 2rem;
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
     font-weight: 600;
+    color: var(--color-text-light);
 }
 
 .author-note p {
     text-align: center;
-    color: var(--color-text);
-    margin-bottom: 1rem;
-    line-height: 2;
+    color: var(--color-text-light);
+    margin-bottom: 0.8rem;
+    line-height: 1.8;
+    font-size: 0.85rem;
 }
 
 .author-sign {
-    margin-top: 2rem !important;
+    margin-top: 1.5rem !important;
     font-style: italic;
-    color: var(--color-text-light) !important;
+    font-size: 0.8rem;
+    opacity: 0.6;
 }
 
 /* ===== Chapter Page Styles ===== */
